@@ -1,6 +1,6 @@
 <?php
 
-namespace Xu42\DlpuNews;
+namespace Cn\Xu42\DlpuNews;
 
 /**
  * 配置文件

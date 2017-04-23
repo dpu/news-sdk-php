@@ -1,6 +1,6 @@
 <?php
 
-namespace Xu42\DlpuNews;
+namespace Cn\Xu42\DlpuNews;
 
 /**
  * 工具 网页抓取
@@ -17,8 +17,8 @@ class ToolCrawl
     /**
      * 一个简单的封装CURL网络请求的函数
      * @param $url      string Url
-     * @param $cookie   string Cookie
-     * @return mixed    网页源代码
+     * @return mixed 网页源代码
+     * @throws SystemException
      */
     protected function myCurl($url)
     {
@@ -26,13 +26,11 @@ class ToolCrawl
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $content = curl_exec($ch);
-        if (curl_errno($ch)){
-            return null;
-        }
         curl_close($ch);
+        if ($content === false) throw new SystemException('网络请求超时');
         return $content;
     }
 

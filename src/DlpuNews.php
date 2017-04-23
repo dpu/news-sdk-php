@@ -1,6 +1,6 @@
 <?php
 
-namespace Xu42\DlpuNews;
+namespace Cn\Xu42\DlpuNews;
 
 
 class DlpuNews extends ToolCrawl

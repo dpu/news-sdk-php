@@ -16,26 +16,7 @@ $ composer require xu42/dlpu-news
 
 ## Usage
 
-``` php
-    require_once './vendor/autoload.php';
-    $dlpuNews = new \Xu42\DlpuNews\DlpuNews();
-    
-    /**
-     * 新闻动态
-     **/
-    $dlpuNews->currentEvents();
-    
-    /**
-     * 通知公告
-     **/
-    $dlpuNews->notice();
-    
-    /**
-     * 教务文件
-     **/
-    $dlpuNews->teachingFiles();
-
-```
+Please see [debug.php](debug.php)
 
 ## Change log
 
