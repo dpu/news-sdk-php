@@ -22,7 +22,7 @@ class ToolCrawl
      */
     protected function myCurl($url)
     {
-        $headers = array('Referer:'.$url, 'User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36');
+        $headers = array('Referer:' . $url, 'User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36');
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -43,10 +43,12 @@ class ToolCrawl
     {
         preg_match_all('/more_list">(.*?)<\/ul>/s', $content, $match_ul);
         preg_match_all('/href="(.*?)" .*?">(.*?)</s', $match_ul[1][0], $match_li);
+        preg_match_all('/\[(.*?)\]/', $match_ul[1][0], $match_time);
 
         foreach ($match_li[0] as $key => $value) {
-          $list[$key]['title'] = mb_convert_encoding($match_li[2][$key], 'UTF-8', 'GB2312');
-          $list[$key]['url']   = Config::$config['url_index'] . $match_li[1][$key];
+            $list[$key]['title'] = mb_convert_encoding($match_li[2][$key], 'UTF-8', 'GB2312');
+            $list[$key]['url'] = Config::$config['url_index'] . $match_li[1][$key];
+            $list[$key]['time'] = mb_convert_encoding($match_time[1][$key], 'UTF-8', 'GB2312');
         }
         return $list;
     }
