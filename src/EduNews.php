@@ -1,9 +1,9 @@
 <?php
 
-namespace Cn\Xu42\DlpuNews;
+namespace Org\DLPU\EduNews;
 
 
-class DlpuNews extends ToolCrawl
+class EduNews extends ToolCrawl
 {
     public function currentEvents()
     {

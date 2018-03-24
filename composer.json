@@ -1,15 +1,15 @@
 {
-    "name": "xu42/dlpu-news",
+    "name": "dpu/edu-news",
     "description": "大连工业大学教务处新闻列表",
     "keywords": [
-        "xu42",
         "dlpu-news",
+        "edu-news",
         "大连工业大学",
         "大连工业大学教务处",
         "大连工业大学教务处新闻"
     ],
-    "homepage": "https://github.com/xu42/dlpu-news",
-    "license": "GPL2.0",
+    "homepage": "https://github.com/dpu/news-sdk-php",
+    "license": "MIT",
     "authors": [
         {
             "name": "xu42",
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cn\\Xu42\\DlpuNews\\": "src"
+            "Org\\DLPU\\EduNews\\": "src"
         }
     },
     "repositories": {

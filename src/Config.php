@@ -1,6 +1,6 @@
 <?php
 
-namespace Cn\Xu42\DlpuNews;
+namespace Org\DLPU\EduNews;
 
 /**
  * 配置文件

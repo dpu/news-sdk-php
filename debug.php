@@ -2,8 +2,8 @@
 
 require 'vendor/autoload.php';
 
-$dlpuNews = new \Cn\Xu42\DlpuNews\DlpuNews();
+$eduNews = new \Org\DLPU\EduNews\EduNews();
 
-var_dump($dlpuNews->currentEvents());
-var_dump($dlpuNews->notice());
-var_dump($dlpuNews->teachingFiles());
+var_dump($eduNews->currentEvents());
+var_dump($eduNews->notice());
+var_dump($eduNews->teachingFiles());

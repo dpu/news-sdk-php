@@ -1,6 +1,6 @@
 <?php
 
-namespace Cn\Xu42\DlpuNews;
+namespace Org\DLPU\EduNews;
 
 /**
  * 工具 网页抓取
@@ -45,10 +45,11 @@ class ToolCrawl
         preg_match_all('/href="(.*?)" .*?">(.*?)</s', $match_ul[1][0], $match_li);
         preg_match_all('/\[(.*?)\]/', $match_ul[1][0], $match_time);
 
+        $list = [];
         foreach ($match_li[0] as $key => $value) {
-            $list[$key]['title'] = mb_convert_encoding($match_li[2][$key], 'UTF-8', 'GB2312');
-            $list[$key]['url'] = Config::$config['url_index'] . $match_li[1][$key];
-            $list[$key]['time'] = mb_convert_encoding($match_time[1][$key], 'UTF-8', 'GB2312');
+            $list[$key]['title'] = trim(mb_convert_encoding($match_li[2][$key], 'UTF-8', 'GB2312'));
+            $list[$key]['url'] = trim(Config::$config['url_index'] . $match_li[1][$key]);
+            $list[$key]['time'] = trim(mb_convert_encoding($match_time[1][$key], 'UTF-8', 'GB2312'));
         }
         return $list;
     }
